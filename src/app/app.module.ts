@@ -18,7 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TokenInterceptor } from './token.interceptor';
 
 import { ToastrModule } from 'ngx-toastr'; 
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { CartComponent } from './cart/cart.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
@@ -61,7 +61,8 @@ import { OrderSummaryComponent } from './order-summary/order-summary.component';
     BoostrapModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    CarouselModule
+    CarouselModule,
+    NgOptimizedImage
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptor, multi:true}],
   bootstrap: [AppComponent]
