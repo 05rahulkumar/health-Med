@@ -1,0 +1,117 @@
+<!-- section 1 -->
+<section>
+    <div class="container">
+  <ngb-carousel *ngIf="images">
+    <ng-template ngbSlide *ngFor="let image of images">
+      <img [ngSrc]="image.src" [width]="500" [height]="500" [alt]="image.alt" class="d-block w-100">
+    </ng-template>
+  </ngb-carousel>
+</div>
+</section>
+<!--end section 1 -->
+<!-- section 2 -->
+<section>
+  <div class="container my-5">
+    <h2 class="text-center mb-4">Shop by Category</h2>
+    <owl-carousel-o class="carousel" [options]="customOptions">
+      <ng-template carouselSlide *ngFor="let category of categories" class="category-item">
+        <div class="card">
+          <img [ngSrc]="category.image" class="card-img-top" [alt]="category.name">
+          <div class="card-body">
+            <h5 class="card-title">{{ category.name }}</h5>
+          </div>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+  
+</section>
+<!-- end section 2 -->
+<!-- section 3 -->
+<section>
+  <div class="container my-5">
+    <h2 class="text-center mb-4">New Launches</h2>
+    <owl-carousel-o class="carousel" [options]="customOptions">
+      <ng-template carouselSlide *ngFor="let product of products" class="product-item">
+        <div class="card border-0 shadow-sm">
+          <div class="position-relative">
+            <img [ngSrc]="product.image" [width]="5" [height]="10" class="card-img-top" [alt]="product.title">
+            <div class="icons position-absolute top-0 end-0 p-2">
+              <a href="#" class="text-white me-2"><i class="fas fa-heart"></i></a>
+              <a href="#" class="text-white"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">{{ product.title }}</h5>
+            <div class="rating">
+              <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
+                <i class="fas" [ngClass]="getStarClass(product.rating, star)"></i>
+              </ng-container>
+            </div>
+            <p class="card-text">
+              <span class="text-muted text-decoration-line-through me-2">{{ product.originalPrice | currency }}</span>
+              <span class="text-danger">{{ product.discountedPrice | currency }}</span>
+            </p>
+          </div>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+</section>
+<!-- end sec 3 -->
+<!-- section 4 -->
+<section class="mb-5 sectiontech">
+  <!-- website view -->
+  <div class="container" id="hap">
+      <mat-grid-list cols="2" rowHeight="2:1.4">
+          <mat-grid-tile>
+              <img ngSrc="assets/img/meeting.svg" alt="" width="80%" style="padding-left: 10rem;">
+          </mat-grid-tile>
+          <mat-grid-tile>
+              <div style="padding-right: 10rem;">
+                  <h2>
+                      WE MAKE</h2>
+                  <h3 style=" color: #e54a20 !important; font-family: Sofia, sans-serif !important;">
+
+                      Our Customer</h3>
+                  <h2>
+
+                      Happy</h2>
+              </div>
+          </mat-grid-tile>
+      </mat-grid-list>
+  </div>
+</section>
+<!--end section 4 -->
+<!-- section 5 -->
+<section>
+  <div class="my-5">
+<owl-carousel-o class="carousel" [options]="customOptions" (afterChange)="afterChange($event)">
+  <ng-template carouselSlide *ngFor="let testimonial of testimonials" class="testimonial-item">
+    <div class="testimonial">
+      <p>{{ testimonial.quote }}</p>
+      <div class="author">{{ testimonial.author }}</div>
+    </div>
+  </ng-template>
+</owl-carousel-o>
+</div>
+</section>
+<!-- end -->
+
+<!-- section 6 -->
+ <section>
+<div class="container my-5">
+  <h2 class="text-center mb-4">Lab Tests by Health Concern</h2>
+  <owl-carousel-o class="carousel" [options]="customOptions" (afterChange)="afterChange($event)">
+    <div carouselSlide *ngFor="let test of labTests" class="testimonial-item">
+      <div class="testimonial">
+        <img [ngSrc]="test.image" [width]="5" [height]="10" class="card-img-top" alt="{{ test.name }}">
+        <p>{{ test.name }}</p>
+        <div class="author">{{ test.description }}</div>
+        <a href="#" class="btn btn-primary">Book Now</a>
+      </div>
+    </div>
+  </owl-carousel-o>
+</div>
+</section>
+<!-- end sec6 -->

@@ -1,0 +1,39 @@
+<div class="container my-5">
+  <div class="card shadow-sm">
+    <div class="card-header bg-teal text-white">
+      <h5>Track Order</h5>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="orderNumber" class="form-label">Order Number</label>
+          <input type="text" class="form-control" id="orderNumber" [(ngModel)]="orderNumber" name="orderNumber" required>
+        </div>
+        <button type="submit" class="btn btn-teal">Track Order</button>
+      </form>
+      <div *ngIf="orderStatus" class="mt-4" id="dis">
+        <mat-horizontal-stepper [linear]="false" class="mt-3">
+          <mat-step *ngFor="let status of orderStatus; let i = index" [completed]="i < currentStep">
+            <ng-template matStepLabel>{{ status.label }}</ng-template>
+            <div>
+              <p>{{ status.date | date: 'medium' }}</p>
+              <button mat-button matStepperNext *ngIf="i < orderStatus.length - 1">Next</button>
+            </div>
+          </mat-step>
+        </mat-horizontal-stepper>
+      </div>
+      <!-- mobile view -->
+      <div *ngIf="orderStatus" class="mt-4" id="dis1">
+        <mat-vertical-stepper [linear]="false" class="mt-3">
+          <mat-step *ngFor="let status of orderStatus; let i = index" [completed]="i < currentStep">
+            <ng-template matStepLabel>{{ status.label }}</ng-template>
+            <div>
+              <p>{{ status.date | date: 'medium' }}</p>
+              <button mat-button matStepperNext *ngIf="i < orderStatus.length - 1">Next</button>
+            </div>
+          </mat-step>
+        </mat-vertical-stepper>
+      </div>
+    </div>
+  </div>
+</div>

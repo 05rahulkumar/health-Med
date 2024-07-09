@@ -1,0 +1,26 @@
+.checked {
+    color: orange;
+  }
+  
+  .card {
+    margin-bottom: 20px;
+  }
+  
+  footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .product-details h5 {
+    margin-top: 1rem;
+  }
+  
+  .review {
+    margin-top: 1rem;
+  }
+  
+  .review p {
+    margin: 0;
+  }
+  

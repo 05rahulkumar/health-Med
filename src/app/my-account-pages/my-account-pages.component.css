@@ -1,0 +1,44 @@
+/* General styles */
+.profile-section {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  /* Sidebar styles */
+  .nav-pills .nav-link {
+    font-size: 1.1rem;
+    color: #333;
+    background-color: #fff;
+    margin-bottom: 10px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .nav-pills .nav-link:hover {
+    background-color: #e9ecef;
+  }
+  
+  .nav-pills .nav-link.active {
+    background-color: #008080;
+    color: #fff;
+  }
+  
+  /* Card styles */
+  .card {
+    border: none;
+  }
+  
+  .card-body {
+    padding: 30px;
+  }
+  
+  @media (max-width: 768px) {
+    .profile-section {
+      padding: 10px;
+    }
+    
+    .card-body {
+      padding: 20px;
+    }
+  }
+  

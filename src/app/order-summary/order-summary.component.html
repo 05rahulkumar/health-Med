@@ -1,0 +1,67 @@
+<div class="container my-5">
+    <!-- Stepper Section -->
+    <div class="stepper-section">
+      <mat-horizontal-stepper [linear]="true" #stepper>
+        <mat-step label="Address"></mat-step>
+        <mat-step label="Product Details"></mat-step>
+        <mat-step label="Price Details"></mat-step>
+      </mat-horizontal-stepper>
+    </div>
+    <div class="container my-5">
+        <!-- Address Section -->
+        <div class="address-section">
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title">Selected Address</h5>
+              <p class="card-text">{{ selectedAddress }}</p>
+              <button class="btn btn-primary" (click)="changeAddress()">Change Address</button>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Cart Items Section -->
+        <div class="cart-items-section mt-4">
+          <div *ngFor="let item of cartItems" class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{ item.name }}</h5>
+                  <p class="card-text">Price: ${{ item.price }}</p>
+                  <p class="card-text">Discount: {{ item.discount * 100 }}%</p>
+                  <div class="input-group mb-3">
+                    <button class="btn btn-outline-secondary" type="button" (click)="updateCartItem(item)">-</button>
+                    <input type="text" class="form-control" [(ngModel)]="item.quantity" aria-label="Quantity" readonly [ngModelOptions]="{standalone:true}">
+                    <button class="btn btn-outline-secondary" type="button" (click)="updateCartItem(item)">+</button>
+                  </div>
+                  <button class="btn btn-danger btn-remove" (click)="removeCartItem(item)">Remove</button>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <img [src]="item.image" class="card-img" alt="Product Image">
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Price Details Section -->
+        <div class="price-details-section mt-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Price Details</h5>
+              <p class="card-text">Total Quantity: {{ getTotalQuantity() }}</p>
+              <p class="card-text">Total Discount: ${{ getTotalDiscount() }}</p>
+              <p class="card-text">Total Price: ${{ getTotalPrice() }}</p>
+              <p class="card-text">Tax: ${{ getTax() }}</p>
+              <p class="card-text">Grand Total: ${{ getGrandTotal() }}</p>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Button Section -->
+        <div class="button-section mt-4">
+          <button class="btn btn-primary" routerLink="/payment">Checkout</button>
+        </div>
+      </div>
+      
+  </div>
+  

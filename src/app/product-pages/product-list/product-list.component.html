@@ -1,0 +1,46 @@
+<div class="container my-5">
+  <div class="row">
+    <!-- Filters Section -->
+    <div class="col-lg-3 col-md-4 mb-4">
+      <h5>Filters</h5>
+      <div class="mb-4">
+        <h6>Price Range</h6>
+        <input type="range" class="form-range" id="priceRange" min="0" max="1000" >
+        <p>Up to {{priceRange | currency}}</p>
+      </div>
+      <div class="mb-4">
+        <h6>Sort by</h6>
+        <select id="sort" class="form-select" >
+          <option value="default">Default</option>
+          <option value="priceAsc">Price: Low to High</option>
+          <option value="priceDesc">Price: High to Low</option>
+        </select>
+      </div>
+      <!-- Add more filters as needed -->
+    </div>
+
+    <!-- Products Section -->
+    <div class="col-lg-9 col-md-8">
+      <div class="row">
+        <div class="col-xl-4 col-md-6 mb-4" *ngFor="let product of filteredProducts">
+          <div class="card product-card h-100">
+            <div class="position-relative">
+              <img [src]="product.image" class="card-img-top" [alt]="product.title">
+              <div class="icons position-absolute top-0 end-0 p-2">
+                <a href="#" class="text-dark me-2"><i class="fas fa-heart"></i></a>
+                <a href="#" class="text-dark"><i class="fas fa-shopping-cart"></i></a>
+              </div>
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">{{ product.title }}</h5>
+              <p class="card-text">
+                <span class="text-muted text-decoration-line-through me-2">{{ product.originalPrice | currency }}</span>
+                <span class="text-danger">{{ product.discountedPrice | currency }}</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

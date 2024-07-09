@@ -1,0 +1,36 @@
+.product-card {
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.icons {
+  display: flex;
+  gap: 10px;
+}
+
+.text-dark {
+  color: #343a40 !important;
+}
+
+/* Ensure the filter section and product cards adapt well on smaller screens */
+@media (max-width: 768px) {
+  .product-card {
+    margin-bottom: 20px;
+  }
+
+  .icons {
+    gap: 5px;
+  }
+
+  .card-img-top {
+    height: auto;
+  }
+}

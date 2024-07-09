@@ -1,0 +1,41 @@
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    color: #777;
+  }
+  
+  footer h5 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  footer p, footer ul, footer li, footer a {
+    color: #ccc;
+  }
+  
+  footer a:hover {
+    color: #fff;
+  }
+  
+  footer .fa {
+    margin-right: 0.5rem;
+  }
+  

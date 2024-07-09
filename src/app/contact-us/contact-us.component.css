@@ -1,0 +1,17 @@
+.container {
+  padding: 50px 0;
+}
+
+.btn-primary {
+  background-color: #008080;
+  border-color: #008080;
+}
+
+.btn-primary:hover {
+  background-color: #005151;
+  border-color: #005151;
+}
+
+.form-label {
+  color: #008080;
+}

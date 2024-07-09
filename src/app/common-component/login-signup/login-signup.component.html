@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <h2 class="text-center mb-4">Welcome to HealthMed</h2>
+        <ul class="nav nav-tabs mb-4">
+          <li class="nav-item">
+            <a [ngClass]="{'active':isLogin}" class="nav-link" data-bs-toggle="tab" (click)="auth()">Login</a>
+          </li>
+          <li class="nav-item">
+            <a [ngClass]="{'active':!isLogin}" class="nav-link" data-bs-toggle="tab" (click)="auth()">Signup</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <!-- Login Tab -->
+          <div class="tab-pane fade show active" *ngIf="isLogin">
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+              <div class="mb-3">
+                <label for="loginEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="loginEmail" name="loginEmail" formControlName="email">
+              </div>
+              <div class="mb-3">
+                <label for="loginPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="loginPassword" name="loginPassword" formControlName="password">
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Login</button>
+              </div>
+            </form>
+          </div>
+          <!-- Signup Tab -->
+          <div class="tab-pane fade show active" *ngIf="!isLogin">
+            <form >
+              <div class="mb-3">
+                <label for="signupName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="signupName" name="signupName"  >
+              </div>
+              <div class="mb-3">
+                <label for="signupEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="signupEmail" name="signupEmail" >
+              </div>
+              <div class="mb-3">
+                <label for="signupPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="signupPassword" name="signupPassword" >
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Signup</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

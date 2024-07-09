@@ -1,0 +1,18 @@
+<!-- wishlist.component.html -->
+<div class="container my-5">
+    <h2 class="text-center mb-4">My Wishlist</h2>
+    <div class="row">
+      <div *ngFor="let item of wishlist" class="col-md-6 col-lg-4 mb-4">
+        <div class="card shadow-sm">
+          <img [src]="item.image" alt="Product Image" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">{{ item.name }}</h5>
+            <p class="card-text"><strong>Price:</strong> {{ item.price | currency }}</p>
+            <p class="card-text"><strong>Discount:</strong> {{ item.discount | percent }}</p>
+            <button class="btn btn-primary btn-remove" (click)="removeFromWishlist(item)">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

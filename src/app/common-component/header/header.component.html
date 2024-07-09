@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-dark clr_bg" *ngIf="!isAdmin">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a class="navbar-brand mx-5" href="#">
+      <img src="assets/img/logo.png" width="30" height="30" alt="Logo">
+    </a>
+    <!-- Display menu button on smaller screens -->
+    <button mat-icon-button *ngIf="isSmallScreen" [matMenuTriggerFor]="menu" aria-label="Toggle navigation">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <!-- Menu items for smaller screens -->
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/product/list">Products List</button>
+      <button mat-menu-item routerLink="/product/details">Products</button>
+      <button mat-menu-item routerLink="wishlist">Wishlist</button>
+      <button mat-menu-item routerLink="cart">Cart</button>
+      <button mat-menu-item routerLink="/login-Signup">Login</button>
+      <button mat-menu-item routerLink="/account">Profile</button>
+      <button mat-menu-item href="#" *ngIf="isLoggedIn">Logout</button>
+    </mat-menu>
+    <!-- Search form -->
+    <form class="form-inline my-2 my-lg-0 mx-auto">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    </form>
+       <!-- Display all menu items as header text on larger screens -->
+       <div class="d-none d-lg-block">
+        <div class="d-flex align-items-center">
+          <h4 class="mr-4" routerLink="/product/list">Products List</h4>
+          <h4 class="mr-4" routerLink="/product/details">Products</h4>
+          <h4 class="mr-4" routerLink="wishlist">Wishlist</h4>
+          <h4 class="mr-4" routerLink="cart">Cart</h4>
+          <h4 class="mr-4" routerLink="/login-Signup">Login</h4>
+          <h4 routerLink="/account">Profile</h4>
+          <h4 href="#" *ngIf="isLoggedIn">Logout</h4>
+        </div>
+      </div>
+  </div>
+</nav>
+
+
+<mat-toolbar class="navbar" *ngIf="isAdmin">
+  <mat-toolbar-row>
+    <span>Admin</span>
+    <span class="example-spacer"></span>
+    <mat-icon class="example-icon">favorite</mat-icon>
+    <mat-icon class="example-icon">delete</mat-icon>
+  </mat-toolbar-row>
+</mat-toolbar>
+

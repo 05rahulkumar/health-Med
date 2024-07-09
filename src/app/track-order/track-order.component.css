@@ -1,0 +1,65 @@
+/* General card styles */
+.card-header.bg-teal {
+  background-color: #008080;
+  color: #fff;
+}
+
+.container {
+  max-width: 800px;
+}
+
+h5, h6 {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.list-group-item {
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+}
+
+.btn-teal {
+  background-color: #008080;
+  color: #fff;
+  border: none;
+}
+
+.btn-teal:hover {
+  background-color: #006666;
+}
+
+/* Stepper styles */
+.mat-horizontal-stepper-header {
+  justify-content: space-between;
+}
+
+.mat-stepper-horizontal-line {
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: #008080;
+}
+
+.mat-step-header .mat-step-icon {
+  background-color: #008080;
+}
+
+.mat-step-header .mat-step-icon .mat-step-icon-content {
+  color: #fff;
+}
+
+
+/* responsive */
+#dis{
+  display: block;
+}
+#dis1{
+  display: none;
+}
+@media only screen and (max-width:780px) {
+  #dis{
+    display: none;
+  }
+  #dis1{
+    display: block;
+  }
+}
