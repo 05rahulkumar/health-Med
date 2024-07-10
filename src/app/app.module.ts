@@ -25,9 +25,7 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 import { PaymentComponent } from './payment/payment.component';
 import { TrackOrderComponent } from './track-order/track-order.component';
 import { ReturnPolicyComponent } from './return-policy/return-policy.component';
-import { AddressComponent } from './my-account-pages/address/address.component';
-import { OrdersComponent } from './my-account-pages/orders/orders.component';
-import { ProfileComponent } from './my-account-pages/profile/profile.component';
+
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 @NgModule({
   declarations: [
@@ -43,9 +41,6 @@ import { OrderSummaryComponent } from './order-summary/order-summary.component';
     PaymentComponent,
     TrackOrderComponent,
     ReturnPolicyComponent,
-    AddressComponent,
-    OrdersComponent,
-    ProfileComponent,
     OrderSummaryComponent,
   ],
   imports: [
