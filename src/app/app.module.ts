@@ -43,9 +43,6 @@ import { OrderSummaryComponent } from './order-summary/order-summary.component';
     PaymentComponent,
     TrackOrderComponent,
     ReturnPolicyComponent,
-    AddressComponent,
-    OrdersComponent,
-    ProfileComponent,
     OrderSummaryComponent,
   ],
   imports: [
