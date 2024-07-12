@@ -25,8 +25,10 @@ import {MatListModule} from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { CommonModule } from '@angular/common';
 @NgModule({
   imports: [
+    CommonModule,
     MatButtonModule,
     MatSlideToggleModule,
     MatTableModule,
@@ -49,6 +51,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatSidenavModule,MatExpansionModule
   ],
   exports: [
+    CommonModule,
     MatButtonModule,
     MatSlideToggleModule,
     MatTableModule,

@@ -45,8 +45,9 @@ import { OrderSummaryComponent } from './order-summary/order-summary.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule, 
     BrowserAnimationsModule,
+    BrowserModule,
     CommonModule,
     HttpClientModule,
     FormsModule,
