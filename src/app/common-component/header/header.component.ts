@@ -26,7 +26,8 @@ export class HeaderComponent {
     ]).subscribe(result => {
       this.isSmallScreen = result.matches;
     });
-
+    
+if(this.authService.getToken()){
     this.authService.getProfile().subscribe((res:any)=>{
       console.log(res);
       if(res.success){
@@ -37,6 +38,7 @@ export class HeaderComponent {
         }
       }
     })
+  }
   }
 
   productItems = [
