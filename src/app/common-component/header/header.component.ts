@@ -26,8 +26,8 @@ export class HeaderComponent {
     ]).subscribe(result => {
       this.isSmallScreen = result.matches;
     });
-
-// if(this.authService.getToken()){
+    
+if(this.authService.getToken()){
     this.authService.getProfile().subscribe((res:any)=>{
       console.log(res);
       if(res.success){
@@ -39,7 +39,7 @@ export class HeaderComponent {
       }
     })
   }
-// }
+  }
 
   productItems = [
     { name: 'Product 1', link: '/product1' },
