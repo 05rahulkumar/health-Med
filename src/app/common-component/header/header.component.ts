@@ -27,17 +27,19 @@ export class HeaderComponent {
       this.isSmallScreen = result.matches;
     });
 
+// if(this.authService.getToken()){
     this.authService.getProfile().subscribe((res:any)=>{
       console.log(res);
       if(res.success){
         this.authService.setUser(res.user);
-        res.user?.userType=='Admin'?this.isAdmin=false:this.isAdmin=true;
+        res.user?.userType=='Customer'?this.isAdmin=false:this.isAdmin=true;
         if(res.user.userType=='Admin'){
           this.Router.navigate(['/admin'])
         }
       }
     })
   }
+// }
 
   productItems = [
     { name: 'Product 1', link: '/product1' },

@@ -16,7 +16,7 @@
     <owl-carousel-o class="carousel" [options]="customOptions">
       <ng-template carouselSlide *ngFor="let category of categories" class="category-item">
         <div class="card">
-          <img [ngSrc]="category.image" class="card-img-top" [alt]="category.name">
+          <img [ngSrc]="category.image" class="card-img-top" [alt]="category.name" [width]="5" [height]="10">
           <div class="card-body">
             <h5 class="card-title">{{ category.name }}</h5>
           </div>
@@ -65,7 +65,7 @@
   <div class="container" id="hap">
       <mat-grid-list cols="2" rowHeight="2:1.4">
           <mat-grid-tile>
-              <img ngSrc="assets/img/meeting.svg" alt="" width="80%" style="padding-left: 10rem;">
+              <img src="assets/img/meeting.svg" alt="" width="80%" style="padding-left: 10rem;">
           </mat-grid-tile>
           <mat-grid-tile>
               <div style="padding-right: 10rem;">

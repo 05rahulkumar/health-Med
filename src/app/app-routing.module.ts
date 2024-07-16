@@ -20,7 +20,7 @@ const routes: Routes = [
    {path:'login-Signup', component:LoginSignupComponent},
    {path:'product',loadChildren:()=>import('./product-pages/product-pages.module').then(m=>m.ProductPagesModule)},
   
- {path:'admin',loadChildren:()=>import('./admin/admin.module').then((mod)=>mod.AdminModule), canLoad:[RoleGuardGuard],data:{role:'Customer'}},
+ {path:'admin',loadChildren:()=>import('./admin/admin.module').then((mod)=>mod.AdminModule), canLoad:[RoleGuardGuard],data:{role:'Admin'}},
    {path:'',loadChildren:()=>import('./my-account-pages/my-account-pages.module').then(m=>m.MyAccountPagesModule)},
    {path:'return-policy', component:ReturnPolicyComponent,canActivate:[RoleGuardGuard],data:{role:'Admin'}},
    {path:'track-order', component:TrackOrderComponent},
