@@ -12,7 +12,5 @@
   <input type="text" formControlName="title" placeholder="Enter your Title">
   <span class="text-danger" *ngIf="title && title.invalid && title.touched">Enter Title</span>
   <input type="file" formControlName="img" placeholder="Enter your Img" (change)="uploadfile($event)">
-
-  <button type="submit"> SUBMIT</button>
-
+  <button type="submit">SUBMIT</button>
 </form>
