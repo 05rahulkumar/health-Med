@@ -39,7 +39,7 @@ getProfile(){
   }
 
   doLogout() {
-    let removeToken = localStorage.removeItem('Token');
+    let removeToken = localStorage.removeItem('token');
     if (removeToken == null) {
     }
   }

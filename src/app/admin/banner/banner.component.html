@@ -1,0 +1,18 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Products</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <!-- Add your product content here -->
+    <p>List of products...</p>
+  </mat-card-content>
+</mat-card>
+
+<form [formGroup]="bannerForm" (ngSubmit)="submitForm()">
+  <input type="text" formControlName="title" placeholder="Enter your Title">
+  <span class="text-danger" *ngIf="title && title.invalid && title.touched">Enter Title</span>
+  <input type="file" formControlName="img" placeholder="Enter your Img" (change)="uploadfile($event)">
+
+  <button type="submit"> SUBMIT</button>
+
+</form>

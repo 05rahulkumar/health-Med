@@ -32,8 +32,8 @@ if(this.authService.getToken()){
       console.log(res);
       if(res.success){
         this.authService.setUser(res.user);
-        res.user?.userType=='Admin'?this.isAdmin=false:this.isAdmin=true;
-        if(res.user.userType=='Admin'){
+        res.user?.userType=='Customer'?this.isAdmin=false:this.isAdmin=true;
+        if(res?.user?.userType=='Admin'){
           this.Router.navigate(['/admin'])
         }
       }

@@ -13,21 +13,21 @@ import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
-  {path:'',pathMatch:'full',redirectTo:'home'},
-  {path:'home',component:HomeComponent},
-  {path:'about-us', component:AboutusComponent},
-   {path:'contact-us', component:ContactUsComponent},
-   {path:'login-Signup', component:LoginSignupComponent},
-   {path:'product',loadChildren:()=>import('./product-pages/product-pages.module').then(m=>m.ProductPagesModule)},
-  
- {path:'admin',loadChildren:()=>import('./admin/admin.module').then((mod)=>mod.AdminModule), canLoad:[RoleGuardGuard],data:{role:'Customer'}},
-   {path:'',loadChildren:()=>import('./my-account-pages/my-account-pages.module').then(m=>m.MyAccountPagesModule)},
-   {path:'return-policy', component:ReturnPolicyComponent,canActivate:[RoleGuardGuard],data:{role:'Admin'}},
-   {path:'track-order', component:TrackOrderComponent},
-   {path:'cart', component:CartComponent},
-   {path:'wishlist', component:WishlistComponent},
-   {path:'order-summary',component:OrderSummaryComponent},
-   {path:'payment',component:PaymentComponent},
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: 'home', component: HomeComponent },
+  { path: 'about-us', component: AboutusComponent },
+  { path: 'contact-us', component: ContactUsComponent },
+  { path: 'login-Signup', component: LoginSignupComponent },
+  { path: 'product', loadChildren: () => import('./product-pages/product-pages.module').then(m => m.ProductPagesModule) },
+
+  { path: 'admin', loadChildren: () => import('./admin/admin.module').then((mod) => mod.AdminModule), canLoad: [RoleGuardGuard], data: { role: 'Admin' } },
+  { path: '', loadChildren: () => import('./my-account-pages/my-account-pages.module').then(m => m.MyAccountPagesModule) },
+  { path: 'return-policy', component: ReturnPolicyComponent },
+  { path: 'track-order', component: TrackOrderComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'wishlist', component: WishlistComponent },
+  { path: 'order-summary', component: OrderSummaryComponent },
+  { path: 'payment', component: PaymentComponent },
 ];
 
 @NgModule({
